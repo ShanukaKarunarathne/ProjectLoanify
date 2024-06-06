@@ -1,11 +1,8 @@
 // functions/getCreditReport.js
 import fetch from 'node-fetch';
-import dotenv from 'dotenv';
 
-dotenv.config();
-
-const clientId = process.env.CLIENT_ID;
-const clientSecret = process.env.CLIENT_SECRET;
+const clientId = '6NkMkE4u3I1f9iUiM0HzQoLSJcVuQEDO';
+const clientSecret = 'hOiDrTf31ckszwSZ';
 const basicAuth = Buffer.from(`${clientId}:${clientSecret}`).toString('base64');
 
 async function getAccessToken() {
