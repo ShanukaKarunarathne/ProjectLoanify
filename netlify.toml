@@ -1,3 +1,4 @@
+# netlify.toml
 [build]
-  functions = "functions"
-  publish = ""
+  functions = "functions"  # Directory where your serverless functions are stored
+  publish = ""  # If there's no static site, you can set this to an empty string or a dummy folder
