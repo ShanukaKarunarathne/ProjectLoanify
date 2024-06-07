@@ -1,0 +1,3 @@
+[build]
+  functions = "functions"  # Directory where your serverless functions are stored
+  publish = "dummy"  # Directory of your front-end code if you have any
