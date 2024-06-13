@@ -28,38 +28,7 @@ async function getCreditReport(accessToken, consumerDetails) {
             'Content-Type': 'application/json',
             'efx-client-correlation-id': 'your-correlation-id-here'
         },
-        body: JSON.stringify({
-            "consumers": {
-                "name": [{"identifier": "current", "firstName": consumerDetails.firstName, "lastName": consumerDetails.lastName}],
-                "socialNum": [{"identifier": "current", "number": consumerDetails.socialSecurityNumber}],
-                "addresses": [{
-                    "identifier": "current",
-                    "houseNumber": consumerDetails.houseNumber,
-                    "streetName": consumerDetails.streetName,
-                    "streetType": consumerDetails.streetType,
-                    "city": consumerDetails.city,
-                    "state": consumerDetails.state,
-                    "zip": consumerDetails.zip
-                }],
-                "birthDate": consumerDetails.birthDate
-            },
-            "customerReferenceidentifier": "2C800002-DOR7",
-            "customerConfiguration": {
-                "equifaxUSConsumerCreditReport": {
-                    "pdfComboIndicator": "Y",
-                    "memberNumber": "999XX12345",
-                    "securityCode": "@U2",
-                    "customerCode": "IAPI",
-                    "multipleReportIndicator": "1",
-                    "models": [
-                        {"identifier": "02778", "modelField": ["3", "GA"]},
-                        {"identifier": "05143"},
-                        {"identifier": "02916"}
-                    ],
-                    "ECOAInquiryType": "Individual"
-                }
-            }
-        })
+        body: JSON.stringify(consumerDetails)
     });
     return response.json();
 }
